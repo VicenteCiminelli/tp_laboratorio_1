@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1588982537 source:e:\descargas\telegram desktop\trabajo practico n1\trabajo practico n1\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+
+1588978081 e:\descargas\telegram desktop\trabajo practico n1\trabajo practico n1\menu.h
+
+1588982303 source:e:\descargas\telegram desktop\trabajo practico n1\trabajo practico n1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+
+1588983985 source:a:\codeblocks\trabajo practico n1\trabajo practico n1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+
+1588984297 a:\codeblocks\trabajo practico n1\trabajo practico n1\menu.h
+
+1588984297 source:a:\codeblocks\trabajo practico n1\trabajo practico n1\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+
