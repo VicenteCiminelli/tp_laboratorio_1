@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1589677233 source:c:\users\jugad\desktop\utn\trabajo practico n2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+
+1589677060 c:\users\jugad\desktop\utn\trabajo practico n2\arrayemployees.h
+
+1589676366 source:c:\users\jugad\desktop\utn\trabajo practico n2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+
+1589681733 source:e:\descargas\telegram desktop\trabajo practico n2\trabajo practico n2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+
+1589678299 e:\descargas\telegram desktop\trabajo practico n2\trabajo practico n2\arrayemployees.h
+
+1589682208 source:e:\descargas\telegram desktop\trabajo practico n2\trabajo practico n2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+	<windows.h>
+	<dos.h>
+
+1589682559 source:c:\users\jugad\desktop\trabajo practico n2\trabajo practico n2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+
+1589678299 c:\users\jugad\desktop\trabajo practico n2\trabajo practico n2\arrayemployees.h
+
+1589682208 source:c:\users\jugad\desktop\trabajo practico n2\trabajo practico n2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+	<windows.h>
+	<dos.h>
+
