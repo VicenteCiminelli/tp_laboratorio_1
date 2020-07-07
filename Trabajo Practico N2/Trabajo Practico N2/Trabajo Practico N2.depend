@@ -29,19 +29,61 @@
 	<windows.h>
 	<dos.h>
 
-1589682559 source:c:\users\jugad\desktop\trabajo practico n2\trabajo practico n2\arrayemployees.c
+1594080237 source:c:\users\jugad\desktop\trabajo practico n2\trabajo practico n2\arrayemployees.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"ArrayEmployees.h"
+	"menu.h"
 
-1589678299 c:\users\jugad\desktop\trabajo practico n2\trabajo practico n2\arrayemployees.h
+1594080101 c:\users\jugad\desktop\trabajo practico n2\trabajo practico n2\arrayemployees.h
 
-1589682208 source:c:\users\jugad\desktop\trabajo practico n2\trabajo practico n2\main.c
+1594080209 source:c:\users\jugad\desktop\trabajo practico n2\trabajo practico n2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"ArrayEmployees.h"
+	"menu.h"
 	<windows.h>
 	<dos.h>
+
+1594082697 source:c:\users\jugad\desktop\utn\trabajos practicos\laboratorio 1a\tp laboratorio 1\trabajo practico n2\trabajo practico n2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+	"menu.h"
+
+1594082625 c:\users\jugad\desktop\utn\trabajos practicos\laboratorio 1a\tp laboratorio 1\trabajo practico n2\trabajo practico n2\arrayemployees.h
+
+1594082625 source:c:\users\jugad\desktop\utn\trabajos practicos\laboratorio 1a\tp laboratorio 1\trabajo practico n2\trabajo practico n2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+	"menu.h"
+	<windows.h>
+	<dos.h>
+
+1594073475 c:\users\jugad\desktop\utn\trabajos practicos\laboratorio 1a\tp laboratorio 1\trabajo practico n2\trabajo practico n2\menu.h
+
+1594073636 source:c:\users\jugad\desktop\utn\trabajos practicos\laboratorio 1a\tp laboratorio 1\trabajo practico n2\trabajo practico n2\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"ArrayEmployees.h"
+	"menu.h"
+
+1594073475 c:\users\jugad\desktop\trabajo practico n2\trabajo practico n2\menu.h
+
+1594073636 source:c:\users\jugad\desktop\trabajo practico n2\trabajo practico n2\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"ArrayEmployees.h"
+	"menu.h"
 

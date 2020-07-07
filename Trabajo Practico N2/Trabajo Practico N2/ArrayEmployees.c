@@ -2,58 +2,92 @@
 #include <stdlib.h>
 #include <string.h>
 #include "ArrayEmployees.h"
+#include "menu.h"
 
-void menu()
+int altaEmpleado(eEmployee* lE, int tamE, int id, char name[],char lastName[],float salary,int sector)///FUNCIONA
 {
-    printf("\n-*-*-*-*-*-*-*-*-Menu Empleados-*-*-*-*-*-*-*-*-");
-    printf("\n\n1- Alta Empleado");
-    printf("\n2- Baja Empleado");
-    printf("\n3- Modificar Empleado");
-    printf("\n4- Listar Empleados");
-    printf("\n5- Salir");
-    printf("\nIngrese Respuesta: ");
 
-}
-
-int menuModificarEmployee()
-{
-    system("cls");
-    int opcion;
-
-    printf("\n\nQue desea modificar?:");
-    printf("\n1. Nombre");
-    printf("\n2.Apellido");
-    printf("\n3.Salario");
-    printf("\n4.Sector");
-    printf("\n5.No quiero modificar nada");
-    printf("\nIngrese la opcion: ");
-    scanf("%d", &opcion);
-
-    return opcion;
-}
-
-void altaEmpleado(eEmployee* lE, int tamE, int id, char name[],char lastName[],float salary,int sector)///FUNCIONA
-{
+    int todoOk = 0;
     eEmployee auxEmployee;
+
+                printf("\n\n*****Alta Empleados*****\n");
+                printf("\nIngrese Nombre: ");
+                fflush(stdin);
+                gets(name);
+                system("cls");
+
+                while(validar_nombre(name) == 0)
+                {
+
+                    printf("*/*/*/*/*/*/*/los nombres y apellidos no pueden llevar numeros/*/*/*/*/*/*/*/*\n");
+                    printf("\nIngrese Nombre: ");
+                    fflush(stdin);
+                    gets(name);
+                    system("cls");
+                    validar_nombre(name);
+
+                }
+
+
+                system("cls");
+                printf("\nIngrese Apellido: ");
+                fflush(stdin);
+                gets(lastName);
+                system("cls");
+
+                while(validar_nombre(lastName) == 0)
+                {
+                    printf("*/*/*/*/*/*/*/los nombres y apellidos no pueden llevar numeros/*/*/*/*/*/*/*/*\n");
+                    printf("\nIngrese Apellido:");
+                    fflush(stdin);
+                    gets(lastName);
+                    system("cls");
+                    validar_nombre(lastName);
+                }
+
+                printf("\nIngrese salario: ");
+                scanf("%f", &salary);
+                if(salary < 0)
+                {
+                    printf("salario no puede ser Inferior a cero");
+                    printf("\nIngrese salario Valido: ");
+                    scanf("%f", &salary);
+
+                }
+                system("cls");
+
+                printf("\nIngrese sector: ");
+                scanf("%d", &sector);
+                if(sector < 0)
+                {
+                    printf("salario no puede ser Inferior a cero");
+                    printf("\nIngrese salario Valido: ");
+                    scanf("%d", &sector);
+
+                }
+                system("cls");
+
             for(int i = 0; i < tamE; i++)
             {
 
-                if(lE[i].isEmpty==0)
+                if(lE[i].isEmpty==1)
                 {
                     auxEmployee.id = id;
                     strcpy(auxEmployee.name, name);
                     strcpy(auxEmployee.lastName, lastName);
                     auxEmployee.salary = salary;
                     auxEmployee.sector = sector;
-                    lE[i].isEmpty = 0;
+                    auxEmployee.isEmpty = 0;
                     lE[i] = auxEmployee;
+                    todoOk = 1;
                     break;
 
                 }
             }
+    return todoOk;
 }
 
-void modificarEmployee(eEmployee* lE, int id, int salary, int sector, char name, char lastName, int tamE)
+void modificarEmployee(eEmployee* lE, int id, int salary, int sector, char name[], char lastName[], int tamE)
 {
     char auxName[50];
     char auxLastName[50];
@@ -114,7 +148,6 @@ void modificarEmployee(eEmployee* lE, int id, int salary, int sector, char name,
     }
 }
 
-
 int initEmployees(eEmployee* lE, int tamE)
 {
 	int inEm = -1;
@@ -141,27 +174,6 @@ int buscarEspacio(eEmployee* list, int len)
 			}
 		}
 	return indice;
-}
-
-int addEmployee(eEmployee* lE, int tamE, int id, char name[], char lastName[], float salary, int sector)
-{
-    system("cls");
-    int index = buscarEspacio(lE,tamE);
-	int isOk = -1;
-	eEmployee auxEmpleado;
-
-	if(lE != NULL && name != NULL && lastName != NULL && tamE > 0)
-	{
-            strcpy(auxEmpleado.name, name);
-			strcpy(auxEmpleado.lastName, lastName);
-			auxEmpleado.id = id;
-			auxEmpleado.salary = salary;
-			auxEmpleado.sector = sector;
-			auxEmpleado.isEmpty = 0;
-			lE[index] = auxEmpleado;
-			isOk = 0;
-	}
-	return isOk;
 }
 
 int findEmployeeById(eEmployee* lE, int tamE, int id)
@@ -248,7 +260,7 @@ int sortEmployees(eEmployee* lE, int tamE, int orden)
 	return isOk;
 }
 
-void printEmployees(eEmployee* lE,int tamE, char name, float salary, int sector, int id)
+/*void printEmployees(eEmployee* lE,int tamE, char name, float salary, int sector, int id)
 {
 
     printf("**** Listado de Empleados ****\n\n");
@@ -256,11 +268,74 @@ void printEmployees(eEmployee* lE,int tamE, char name, float salary, int sector,
 
     for(int i = 0; i < tamE; i++)
     {
-        if(lE[i].id != 0)
+        if(lE[i].isEmpty == 0)
             {
                 printf("%d               %10s             %10s                   %2.f                 %d  \n", lE[i].id, lE[i].name, lE[i].lastName, lE[i].salary, lE[i].sector);
             }
 
     }
+}*/
+
+void printEmployees(eEmployee* lE,int tamE, char name, float salary, int sector, int id)
+{
+    int i;
+    printf("\nID    Nombre    Apellido     Sueldo   Sector\n\n\n");
+    for(i=0; i<tamE; i++)
+    {
+        if(lE[i].isEmpty==0)
+        {
+            printf("\n%d    %s     %s      %.2f      %d",lE[i].id,lE[i].name,lE[i].lastName,lE[i].salary,lE[i].sector);
+        }
+    }
 }
 
+void informarEmpleados(eEmployee* lE,int tamE, int* id)
+{
+    int opcion;
+    int i;
+    int contadorSalarios;
+    float acumuladorSalarios;
+    float promedioSalarios;
+    int mayorAlSalarioPromedio;
+    contadorSalarios=0;
+    acumuladorSalarios=0;
+    mayorAlSalarioPromedio=0;
+
+
+        printf("\n1. Listado de los empleados ordenados alfabeticamente por Apellido y Sector.");
+        printf("\n2. Total y promedio de los salarios, y cuantos empleados superan el salario promedio.");
+        printf("\nIngerse opcion: ");
+        scanf("%d",&opcion);
+        switch(opcion)
+        {
+        case 1:
+            sortEmployees(lE,tamE,1);
+            printEmployees(lE, tamE, ' ', 0, 0, 0);
+            break;
+        case 2:
+            for(i=0; i<tamE; i++)
+            {
+                if(lE[i].isEmpty==0)
+                {
+                    contadorSalarios++;
+                    acumuladorSalarios=acumuladorSalarios+lE[i].salary;
+
+                }
+            }
+            promedioSalarios=acumuladorSalarios/(float)contadorSalarios;
+            for(i=0; i<tamE; i++)
+            {
+                if(lE[i].salary>promedioSalarios && lE[i].isEmpty==0)
+                {
+                    mayorAlSalarioPromedio++;
+                }
+            }
+            printf("\nSalarios Totales: %.2f",acumuladorSalarios);
+            printf("\nPromedio de salarios: %.2f",promedioSalarios);
+            printf("\nEmpleados que superan al sueldo promedio: %d\n\n",mayorAlSalarioPromedio);
+            break;
+        default:
+            printf("\nOpcion invalida!");
+            break;
+        }
+}

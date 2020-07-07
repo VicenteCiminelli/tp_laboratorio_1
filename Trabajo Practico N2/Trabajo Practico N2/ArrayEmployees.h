@@ -15,7 +15,7 @@ typedef struct
 
 #endif // ARRAYEMPLOYEES_H_INCLUDED
 
-void modificarEmployee(eEmployee* lE, int id, int salary, int sector, char name, char lastName, int tamE);
+void modificarEmployee(eEmployee* lE, int id, int salary, int sector, char name[], char lastName[], int tamE);
 
 /** \brief
  *
@@ -50,7 +50,7 @@ int initEmployees(eEmployee* lE, int tamE);
 * \return int Return (-1) if Error [Invalid length or NULL pointer or without free space] - (0) if Ok
 * */
 
-int addEmployee(eEmployee* lE, int tamE, int id, char name[],char lastName[],float salary,int sector);
+int altaEmpleado(eEmployee* lE, int tamE, int id, char name[],char lastName[],float salary,int sector);
 
 /** \brief register a new employee
 *
@@ -58,17 +58,6 @@ int addEmployee(eEmployee* lE, int tamE, int id, char name[],char lastName[],flo
 * \param The user must enter salary and sector
 * \return Employee
 * */
-
-void altaEmpleado(eEmployee* lE, int tamE, int id, char name[],char lastName[],float salary,int sector);
-
-/** \brief find an Employee by Id en returns the index position in array.
-*
-* \param list Employee*
-* \param len int
-* \param id int
-* \return Return employee index position or (-1) if [Invalid length or NULL pointer received or employee not found]
-* */
-
 
 int findEmployeeById(eEmployee* lE, int tamE,int id);
 
@@ -102,3 +91,12 @@ int sortEmployees(eEmployee* lE, int tamE, int order);
 * \return int
 * */
 void printEmployees(eEmployee* lE,int tamE, char name, float salary, int sector, int id);
+
+/** \brief print
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+void informarEmpleados(eEmployee* lE,int tamE, int* id);
